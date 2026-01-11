@@ -1,0 +1,409 @@
+/* ============================================
+   ninchi Landing Page - Styles
+   Pixel-perfect conversion from Figma
+   All measurements converted to percentages/clamp
+   ============================================ */
+
+/* ---- CSS Reset & Base Styles ---- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   Page Container
+   Figma: 1440 x 810 (full frame)
+   Background: #fffefc
+   ============================================ */
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fffefc;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================
+   Overall Frame
+   Figma: 1134 x 704 centered
+   Contains all page content
+   ============================================ */
+.overall-frame {
+    /* Responsive sizing with aspect ratio */
+    width: min(78.75%, 1134px); /* 1134/1440 = 78.75% */
+    aspect-ratio: 1134 / 704;
+    max-height: 86.91%; /* 704/810 = 86.91% */
+    position: relative;
+    background-color: transparent;
+    overflow: visible;
+}
+
+/* ============================================
+   Header Section
+   ============================================ */
+
+/* ---- Sign In Button ---- */
+/* Figma: left=10, top=19, w=178, h=30 relative to overall-frame */
+.sign-in {
+    position: absolute;
+    left: 0.88%; /* 10/1134 */
+    top: 2.70%; /* 19/704 */
+    width: 15.70%; /* 178/1134 */
+    height: 4.26%; /* 30/704 */
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.sign-in-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(12px, 1.5vw, 17px);
+    color: #ff0000;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sign-in-text:hover {
+    text-decoration: underline;
+}
+
+/* ---- Logo ---- */
+/* Figma: left=1070, top=8, w=49, h=49 relative to overall-frame */
+.logo {
+    position: absolute;
+    left: 94.36%; /* 1070/1134 */
+    top: 1.14%; /* 8/704 */
+    width: 4.32%; /* 49/1134 */
+    aspect-ratio: 1 / 1;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/* ============================================
+   Hero Page Section
+   Figma: left=0, top=66, w=657, h=559
+   ============================================ */
+.hero-page {
+    position: absolute;
+    left: 0;
+    top: 9.38%; /* 66/704 */
+    width: 57.94%; /* 657/1134 */
+    height: 79.40%; /* 559/704 */
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.frosted-glass-hero {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 2px solid #ffbbbb;
+    border-radius: 19px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frosted-bg-image {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* ============================================
+   Feature Cards - Common Styles
+   All cards: w=457, h=173, left=677
+   ============================================ */
+.feature-card {
+    position: absolute;
+    left: 59.70%; /* 677/1134 */
+    width: 40.30%; /* 457/1134 */
+    height: 24.57%; /* 173/704 */
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.frosted-glass-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 2px solid #ffbbbb;
+    border-radius: 11px;
+}
+
+.card-icon {
+    position: absolute;
+    z-index: 1;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-title {
+    position: absolute;
+    left: 18.82%; /* 86/457 */
+    top: 9.25%; /* 16/173 */
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(20px, 2.4vw, 35px);
+    color: #ff0000;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.card-description {
+    position: absolute;
+    left: 4.60%; /* 21/457 */
+    top: 39.88%; /* 69/173 */
+    width: 90.59%; /* 414/457 */
+    height: 56.07%; /* 97/173 */
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: clamp(11px, 1.2vw, 17px);
+    color: #ff0000;
+    text-align: justify;
+    line-height: normal;
+    z-index: 1;
+}
+
+.card-description .bold {
+    font-weight: 800;
+}
+
+.card-description .italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.card-description .blue {
+    color: #00359f;
+}
+
+.card-description .orange {
+    color: #ff9d00;
+}
+
+/* ---- Store Materials Card ---- */
+/* Figma: top=66 relative to overall-frame */
+.store-materials {
+    top: 9.38%; /* 66/704 */
+}
+
+/* Icon: left=23, top=16, size=44x44 */
+.materials-icon {
+    left: 5.03%; /* 23/457 */
+    top: 9.25%; /* 16/173 */
+    width: 9.63%; /* 44/457 */
+    aspect-ratio: 1 / 1;
+}
+
+/* ---- Challenge Yourself Card ---- */
+/* Figma: top=260 relative to overall-frame */
+.challenge-yourself {
+    top: 36.93%; /* 260/704 */
+}
+
+/* Icon: left=24, top=17, size=44x44 */
+.challenge-icon {
+    left: 5.25%; /* 24/457 */
+    top: 9.83%; /* 17/173 */
+    width: 9.63%; /* 44/457 */
+    aspect-ratio: 1 / 1;
+}
+
+/* ---- Receive Feedback Card ---- */
+/* Figma: top=452 relative to overall-frame */
+.receive-feedback {
+    top: 64.20%; /* 452/704 */
+}
+
+/* Icon: left=25, top=19, size=40x40 */
+.star-icon {
+    left: 5.47%; /* 25/457 */
+    top: 10.98%; /* 19/173 */
+    width: 8.75%; /* 40/457 */
+    aspect-ratio: 1 / 1;
+}
+
+/* ============================================
+   Footer Section
+   ============================================ */
+
+/* ---- More Info Links ---- */
+/* Figma: left=11, top=645, w=637, h=29 */
+.more-info {
+    position: absolute;
+    left: 0.97%; /* 11/1134 */
+    top: 91.62%; /* 645/704 */
+    width: 56.17%; /* 637/1134 */
+    height: 4.12%; /* 29/704 */
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.footer-link {
+    position: absolute;
+    top: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(12px, 1.2vw, 17px);
+    color: #ff0000;
+    text-align: center;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.terms {
+    left: 14.44%; /* 92/637 */
+}
+
+/* ---- Social Icons ---- */
+/* Figma: left=1036, top=646, w=75, h=23 */
+.socials {
+    position: absolute;
+    left: 91.36%; /* 1036/1134 */
+    top: 91.76%; /* 646/704 */
+    width: 6.61%; /* 75/1134 */
+    height: 3.27%; /* 23/704 */
+    overflow: hidden;
+}
+
+.social-icon {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.social-icon img {
+    height: 100%;
+    width: auto;
+}
+
+/* LinkedIn: left edge, width ~30% of container */
+.linkedin {
+    left: 0;
+    right: 70.05%;
+}
+
+/* Facebook: right edge */
+.facebook {
+    left: 69.33%;
+    right: 0;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+/* For very small screens */
+@media screen and (max-width: 768px) {
+    .overall-frame {
+        width: 95%;
+        aspect-ratio: auto;
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .hero-page,
+    .feature-card,
+    .more-info,
+    .socials {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .hero-page {
+        height: 400px;
+        aspect-ratio: 657 / 559;
+    }
+    
+    .feature-card {
+        height: auto;
+        min-height: 173px;
+        aspect-ratio: 457 / 173;
+    }
+    
+    .sign-in {
+        left: 5%;
+    }
+    
+    .logo {
+        left: auto;
+        right: 5%;
+        width: 49px;
+    }
+    
+    .socials {
+        width: 75px;
+        height: 23px;
+        margin: 0 auto;
+    }
+    
+    .more-info {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footer-link {
+        position: relative;
+        left: auto !important;
+        transform: none;
+    }
+}
+
+/* For medium screens */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .card-title {
+        font-size: clamp(18px, 2.2vw, 30px);
+    }
+    
+    .card-description {
+        font-size: clamp(10px, 1.1vw, 15px);
+    }
+}
